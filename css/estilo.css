@@ -1,0 +1,215 @@
+@font-face {
+    font-family: 'fuenteMarhey';
+    src: url('./Marhey-VariableFont_wght.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'fuenteKIdDOS';
+    src: url('./KIdDOS-Regular.ttf') format('truetype'),
+}
+
+body{
+    background-color: #ffc3db;
+}
+
+#idHeaderTitulo {
+    background-image: url('./imagenHeader.png');
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    box-sizing: border-box;
+}
+
+#idHeaderTitulo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#idHeaderTitulo h1 {
+    color: rgb(0, 149, 255);
+    font-family: 'fuenteKIdDOS', cursive;
+    font-size: 100px;
+    text-shadow: 8px 8px px #17888D;
+}
+
+h5 {
+    color: rgb(14, 8, 8);
+    font-family: 'fuenteMarhey', cursive;
+    font-size: 25px;
+
+}
+
+h2 {
+    color: rgb(255, 255, 255);
+    font-family: 'fuenteKIdDOS', cursive;
+    font-size: 45px;
+}
+
+p {
+    color: rgb(0, 0, 0);
+    font-family: 'fuenteMarhey', cursive;
+    font-size: 55px;
+}
+
+#idTextoDescriptivo{
+    color: #FF70AA;
+    font-size: 30px;
+    background-color: #FFF6A4;
+    border-radius: 10px;
+    border: 4px solid #FFF070;
+    box-shadow: 7px 7px 7px rgba(138, 138, 138, 0.5);
+}
+
+#idTextoDescriptivoMapa{
+    color: #005467;
+    font-size: 30px;
+    background-color: #A6EEFF;
+    border-radius: 10px;
+    border: 4px solid #74E5FF;
+    box-shadow: 7px 7px 7px rgba(138, 138, 138, 0.5);
+}
+
+#idTextoDescriptivoCards{
+    color: #BA004B;
+    font-size: 35px;
+    font-family: 'fuenteMarhey', cursive;
+    text-shadow: 5px 5px 5px #FF70AA;
+    margin-top: 40px;
+}
+
+#idTextoDescriptivoCards svg{
+    width: 38px;
+    height: 38px;
+    color: #FF0067;
+}
+
+#idBarraNavegacion svg{
+    width: 35px;
+    height: 35px;
+    color: #8F003A;
+}
+
+.nav-link {
+    color: #ffffff;
+}
+
+.navbar {
+    color: #8F003A;
+    font-family: 'fuenteMarhey', cursive;
+    font-size: 30px; 
+    background-color: #FF70AA;
+}
+
+#idMacanNavBar {
+   margin-right: 50px;
+   font-size: 35px;
+}
+
+.card{
+    background-color: #FFF6A4;
+    transition: transform 0.3s ease-in-out;
+}
+
+#idCardsImagenes .card:hover {
+    transform: scale(1.05);
+}
+
+.card svg{
+    width: 25px;
+    height: 25px;
+    color: #FF6E6B;
+}
+
+.card p{
+    color: #FF0067;
+    font-family: 'fuenteMarhey', cursive;
+    font-size: 25px;
+}
+
+.custom-animation {
+    animation-delay: 1.5s;
+}
+
+.card:hover {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); 
+}
+
+#idServiciosAccordion button {
+    background-color: #74E5FF;
+    font-size: 25px;
+    color: #005467;
+}
+
+#idServiciosAccordion .accordion-body {
+    background-color: #A6EEFF;
+}
+
+#idServiciosAccordion p {
+    font-size: 20px;
+}
+
+#idTextoUbicacion {
+    color: #BA004B;
+    font-size: 35px;
+    font-family: 'fuenteMarhey', cursive;
+    text-shadow: 5px 5px 5px #FF70AA;
+    margin-top: 40px;
+}
+
+#idFooter {
+    background-color: #FF70AA;
+}
+
+#idFooter p {
+    font-size: 20px;
+    color: #8F003A;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#idTextoAcordeon {
+    color: #BA004B;
+    font-size: 35px;
+    font-family: 'fuenteMarhey', cursive;
+    text-shadow: 5px 5px 5px #FF70AA;
+    margin-top: 40px;
+}
+
+.accordion-header button {
+    font-size: 24px;
+}
+
+#idAcordeon h5{
+    color: #17888D;
+    font-size: 30px;
+    font-family: 'fuenteMarhey', cursive;
+}
+
+.badge {
+    background-color: #FF0067 !important;
+}
+
+#idAcordeon p{
+    color: #17888D;
+    font-size: 35px;
+    font-family: 'fuenteKIdDOS', cursive;
+}
+
+#idCardsImagenes h5{
+    color: #FF0067;
+    font-size: 30px;
+}
+
+#idCardsImagenes p{
+    color: #FF0067;
+    font-size: 30px;
+    font-family: 'fuenteKIdDOS', cursive;
+}
+
+.acordeonPrecios {
+    background-color: rgb(201, 247, 253) !important;
+    color: #005467!important;
+    font-size: 20px;
+    font-family: 'fuenteKIdDOS', cursive;
+}

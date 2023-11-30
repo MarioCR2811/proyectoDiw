@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<!-- Enlaces a bootstrap-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+	<style type="text/css">
+		body {
+			margin-left: 10px;
+		}
+
+		form, 
+		#resultadoBusqueda {
+			display: none;
+		}
+
+		#formularios {
+			margin-top: 60px;
+		}
+	</style>
+	<title>Gestion Animacion Infantil</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+		  <a class="navbar-brand" href="#">Gestión de empresa de animación infantil</a>
+		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false">
+							Clientes
+					</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" id="mnuAltaCliente" href="#">Alta de cliente</a></li>
+						<li><a class="dropdown-item" href="#" id="mnuBuscarCliente">Obtener cliente y eliminación</a></li>
+						<li><a class="dropdown-item" href="#" id="mnuBuscarClienteParametros">Buscar cliente por direccion y modificación</a></li>
+						<li><a class="dropdown-item" id="mnuListarClientes" href="#">Listado de clientes</a></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						Pedidos
+					</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#" id="mnuAltaPedido">Alta de pedidos</a></li>
+						<li><a class="dropdown-item" href="#" id="mnuBuscarPedido">Buscar pedido por ID y borrar</a></li>
+						<li><a class="dropdown-item" href="#" id="mnuBuscarPedidoDescripcion">Buscar pedido por descripcion y modificar</a></li>
+						<li><a class="dropdown-item" href="#" id="mnuListarPedidos">Listado de todos los pedidos</a></li>
+					</ul>
+				</li>
+			</ul>
+		  </div>
+		</div>
+	  </nav>
+	
+	<div class="container" id="formularios">
+		<div class="row">
+			<form class="form-horizontal" name="frmAltaCliente" id="frmAltaCliente">
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Alta de Cliente</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtNombre">Nombre</label>
+						<div class="col-xs-4">
+							<input id="txtNombre" name="txtNombre" placeholder="Nombre del cliente"
+								class="form-control input-md" type="text">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtEmail">Email</label>
+						<div class="col-xs-4">
+							<input id="txtEmail" name="txtEmail" placeholder="Email del cliente" class="form-control input-md"
+								type="text">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtTelefono">Telefono</label>
+						<div class="col-xs-4">
+							<input id="txtTelefono" name="txtTelefono" placeholder="Telefono del cliente" class="form-control input-md"
+								type="text">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtDireccion">Direccion(Añade una , y el Municipio al final)</label>
+						<div class="col-xs-4">
+							<input id="txtDireccion" name="txtDireccion" placeholder="Direccion del cliente" class="form-control input-md"
+								type="text">
+						</div>
+					</div>
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="btnAceptarAltaCliente"></label>
+						<div class="col-xs-4">
+							<input type="button" id="btnAceptarAltaCliente" name="btnAceptarAltaCliente"
+								class="btn btn-primary" value="Aceptar" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<form class="form-horizontal" name="frmBuscarCliente" id="frmBuscarCliente">
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Buscar un cliente</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtIDCliente">ID Cliente</label>
+						<div class="col-xs-4">
+							<input id="txtIdComponente" name="txtIDCliente" placeholder="Id del Cliente"
+								class="form-control input-md" type="text">
+						</div>
+					</div>
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="btnBuscarCliente"></label>
+						<div class="col-xs-4">
+							<input type="button" id="btnBuscarCliente" name="btnBuscarCliente"
+								class="btn btn-primary" value="Aceptar" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			
+
+			<form class="form-horizontal" name="frmBuscarClienteParametros" id="frmBuscarClienteParametros">
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Busqueda de cliente por direccion</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtDireccion">Direccion</label>
+						<div class="col-xs-4">
+							<input id="txtDireccion" name="txtDireccion" placeholder="Direccion del cliente" class="form-control input-md"
+								type="text">
+						</div>
+					</div>
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="btnBuscarClienteParametro"></label>
+						<div class="col-xs-4">
+							<input type="button" id="btnBuscarClienteParametro" name="btnBuscarClienteParametro"
+								class="btn btn-primary" value="Aceptar" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<div id="resultadoBusquedaParametros"></div>
+			<form class="form-horizontal" name="frmEditarCliente" id="frmEditarCliente">
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Edición de Cliente</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModID">ID</label>
+						<div class="col-xs-4">
+							<input disabled id="txtModID" name="txtModID" placeholder="ID del cliente"
+								class="form-control input-md" type="text" >
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModNombre">Nombre</label>
+						<div class="col-xs-4">
+							<input id="txtModNombre" name="txtModNombre" placeholder="Nombre del cliente"
+								class="form-control input-md" type="text">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModEmail">Email</label>
+						<div class="col-xs-4">
+							<input id="txtModEmail" name="txtModEmail" placeholder="Email del cliente" class="form-control input-md"
+								type="text">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModTelefono">Telefono</label>
+						<div class="col-xs-4">
+							<input id="txtModTelefono" name="txtModTelefono" placeholder="Telefono del cliente" class="form-control input-md"
+								type="text">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModDireccion">Direccion(Añade una , y el Municipio al final)</label>
+						<div class="col-xs-4">
+							<input id="txtModDireccion" name="txtModDireccion" placeholder="Direccion del cliente" class="form-control input-md"
+								type="text">
+						</div>
+					</div>
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="btnAceptarModificacionCliente"></label>
+						<div class="col-xs-4">
+							<input type="button" id="btnAceptarModificacionCliente" name="btnAceptarModificacionCliente"
+								class="btn btn-primary" value="Modificar" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<form class="form-horizontal" name="frmAltaPedido" id="frmAltaPedido">
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Alta de Pedido</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtDescripcion">Descripcion</label>
+						<div class="col-xs-4">
+							<input id="txtDescripcion" name="txtDescripcion" placeholder="Descripcion del pedido"
+								class="form-control input-md" type="text">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtFecha">Fecha</label>
+						<div class="col-xs-4">
+							<input id="txtFecha" name="txtFecha" placeholder="Fecha del pedido" class="form-control input-md"
+								type="date">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtPrecio">Precio Total</label>
+						<div class="col-xs-4">
+							<input id="txtPrecio" name="txtPrecio" placeholder="Precio total del pedido" class="form-control input-md"
+								type="number">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="lstCliente">Cliente</label>
+						<div class="col-xs-4">
+							<select  class="form-select" name="lstCliente" id="lstCliente">
+							</select>
+						</div>
+					</div>
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="btnAceptarAltaPedido"></label>
+						<div class="col-xs-4">
+							<input type="button" id="btnAceptarAltaPedido" name="btnAceptarAltaPedido"
+								class="btn btn-primary" value="Aceptar" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<form class="form-horizontal" name="frmBuscarPedido" id="frmBuscarPedido">
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Buscar un pedido</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtIDPedido">ID Pedido</label>
+						<div class="col-xs-4">
+							<input id="txtIDPedido" name="txtIDPedido" placeholder="Id del Pedido"
+								class="form-control input-md" type="text">
+						</div>
+					</div>
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="btnBuscarPedido"></label>
+						<div class="col-xs-4">
+							<input type="button" id="btnBuscarPedido" name="btnBuscarPedido"
+								class="btn btn-primary" value="Aceptar" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<form class="form-horizontal" name="frmBuscarPedidoDescripcion" id="frmBuscarPedidoDescripcion">
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Buscar pedidos por Descripcion</legend>
+					
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="lstDescripcion">Descricion</label>
+						<div class="col-xs-4">
+							<select  class="form-select" name="lstDescripcion" id="lstDescripcion">
+							</select>
+						</div>
+					</div>
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="btnAceptarBuscarPedidoDescripcion"></label>
+						<div class="col-xs-4">
+							<input type="button" id="btnAceptarBuscarPedidoDescripcion" name="btnAceptarBuscarPedidoDescripcion"
+								class="btn btn-primary" value="Aceptar" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+
+			<form class="form-horizontal" name="frmEditarPedido" id="frmEditarPedido">
+				<fieldset>
+					<!-- Form Name -->
+					<legend>Edición de Pedido</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModID">ID</label>
+						<div class="col-xs-4">
+							<input disabled id="txtModID" name="txtModID" placeholder="ID del pedido"
+								class="form-control input-md" type="text" >
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModDescripcion">Descripcion</label>
+						<div class="col-xs-4">
+							<input id="txtModDescripcion" name="txtModDescripcion" placeholder="Descricion del pedido"
+								class="form-control input-md" type="text">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModFecha">Fecha</label>
+						<div class="col-xs-4">
+							<input id="txtModFecha" name="txtModFecha" placeholder="Fecha" class="form-control input-md"
+								type="date">
+						</div>
+					</div>
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="txtModPrecio">Precio</label>
+						<div class="col-xs-4">
+							<input id="txtModPrecio" name="txtModPrecio" placeholder="Precio total" class="form-control input-md"
+								type="number">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="lstClienteMod">Cliente</label>
+						<div class="col-xs-4">
+							<select class="form-select" name="lstClienteMod" id="lstClienteMod">
+							</select>
+						</div>
+					</div>					
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="btnAceptarModificacionPedido"></label>
+						<div class="col-xs-4">
+							<input type="button" id="btnAceptarModificacionPedido" name="btnAceptarModificacionPedido"
+								class="btn btn-primary" value="Modificar" />
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<div id="resultadoBusqueda"></div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="js/ajax.js"></script>
+	<script type="text/javascript" src="js/objetos.js"></script>
+	<script type="text/javascript" src="js/codigo.js"></script>
+</body>
+
+</html>
